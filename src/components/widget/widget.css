@@ -1,0 +1,132 @@
+.widget__wrapper {
+    height: auto;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 10px;
+      
+    display: grid;
+    justify-content: center;
+}
+  
+.widget__top, .widget__bottom {
+    padding: 20px;
+    text-align: center;
+}
+  
+.widget__top-heading span, .widget__bottom-heading span {
+    font-size: 22px;
+    font-weight: 600;
+}
+  
+.widget__top-heading select, .widget__bottom-heading select {
+    font-size: 35px;
+    font-weight: 600;
+    border: 0;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+  
+  
+.widget__middle hr {
+    height: 2px;
+    background-color: #000000;
+    width: 100%;
+    margin: 0;
+}
+  
+.swith-img {
+    width: 40px;
+    height: 40px;
+    transition: 0.4s;
+}
+  
+.swith {
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #2EFCD7;
+    cursor: pointer;
+}
+  
+.swith:hover .swith-img {
+    transform: rotate(180deg);
+}
+  
+.widget__middle {
+    display: flex;
+    align-items: center;
+}
+  
+.widget__bottom-footer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 10px 0;
+}
+  
+.widget__bottom-footer span {
+    margin-top: 10px;
+}
+  
+.widget__top-sum input, .widget__bottom-sum input {
+    border: 0;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    border-bottom: 2px solid black;
+    outline: 0;
+}
+  
+.currencies {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+  
+.currencies li {
+    font-size: 23px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 5px;
+    border: 2px solid transparent;
+}
+  
+.currencies li.active {
+    color: black;
+    background-color: #2EFCD7;
+    border-radius: 5px;
+    /* box-shadow: 0px 5px 0px black; */
+    border: 2px solid black;
+}
+  
+.currencies li.active:hover {
+    color: black;
+    background-color: #2EFCD7;
+    border-radius: 5px;
+}
+  
+@media screen and (max-width: 900px) {
+    .header__left {
+      display: none;
+    }
+  
+    .header__right {
+      display: none;
+    }
+  
+    .header__right h1 {
+      font-size: 40px;
+    }
+  
+    .header__right p {
+        font-size: 20px;
+    }
+}

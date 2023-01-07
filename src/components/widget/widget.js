@@ -1,3 +1,4 @@
+import './widget.css';
 import swith from '../../assets/images/switch.svg';
 import Block from '../block/block';
 import { useState, useEffect, useRef } from "react";
