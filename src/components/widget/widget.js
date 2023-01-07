@@ -31,12 +31,12 @@ function Widget() {
             const price = value / rates.current[fromCurrency];
             const result = price * rates.current[toCurrency];
             setFromPrice(value);
-            setToPrice(result.toFixed([2]));
+            setToPrice(result.toFixed(2));
         }
 
         const onChangeToPrice = (value) => {
             const result = (rates.current[fromCurrency] / rates.current[toCurrency]) * value;
-            setToPrice(result.toFixed([2]));
+            setToPrice(result.toFixed(2));
         }
 
         useEffect(() => {
