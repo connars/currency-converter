@@ -106,7 +106,7 @@
     color: black;
     background-color: #2EFCD7;
     border-radius: 5px;
-    box-shadow: 0px 5px 0px black;
+    /* box-shadow: 0px 5px 0px black; */
     border: 2px solid black;
 }
 
@@ -114,8 +114,4 @@
     color: black;
     background-color: #2EFCD7;
     border-radius: 5px;
-    box-shadow: 0px 5px 0px black;
-    transform: translateY(-3px);
-    transform: translateY(5px);
-    box-shadow: 0px 0px 0px black;
 }

@@ -2,7 +2,7 @@ import './block.css';
 import { useState, useEffect, useRef } from "react";
 
 
-function Block({ title, value, currency, onChangeValue, onChangeCurrency }) {
+function Block({ title, value, currency, onChangeValue, onChangeCurrency, placeholder }) {
 
     const defaultCurrencies = ['UAH', 'USD', 'EUR', 'PLN'];
 
@@ -26,7 +26,7 @@ function Block({ title, value, currency, onChangeValue, onChangeCurrency }) {
                 onChange={(e) => onChangeValue(e.target.value)}
                 value={value}
                 type="number"
-                placeholder={0}
+                placeholder={placeholder}
                 />
         </div>
     </div>

@@ -35,10 +35,14 @@ function Widget() {
         }
 
         const onChangeToPrice = (value) => {
+
             const result = (rates.current[fromCurrency] / rates.current[toCurrency]) * value;
-            setFromPrice(result.toFixed(2));
+            // setToPrice(result.toFixed(2));
+            // value = result;
             setToPrice(value);
+            setFromPrice(result.toFixed(2));
         }
+
 
         useEffect(() => {
             onChangeFromPrice(fromPrice);   
@@ -52,11 +56,12 @@ function Widget() {
     return  (
         <div className='widget__wrapper'>
             <Block 
-                title={'Продаю'}
+                title={'У меня есть'}
                 value={fromPrice}
                 currency={fromCurrency} 
                 onChangeCurrency={setFromCurrency} 
-                onChangeValue={onChangeFromPrice} 
+                onChangeValue={onChangeFromPrice}
+                placeholder={''} 
             />
             <div className="widget__middle">
                 <hr></hr>
@@ -66,7 +71,7 @@ function Widget() {
                 <hr></hr>
             </div>
             <Block 
-                title={'Хочу получить'}
+                title={'Хочу приобрести'}
                 value={toPrice} 
                 currency={toCurrency} 
                 onChangeCurrency={setToCurrency}
