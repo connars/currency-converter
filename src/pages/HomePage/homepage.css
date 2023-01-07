@@ -1,0 +1,28 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 90vh;
+}
+
+.hero__left h1 {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 96%;
+    margin-bottom: 0;
+    /* or 86px */
+    color: #000000;
+}
+
+.hero__left p {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 104%;
+    /* or 37px */
+    color: #000000;
+}
