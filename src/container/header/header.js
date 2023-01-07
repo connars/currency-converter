@@ -1,26 +1,28 @@
 import './header.css';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 function Header() {
+    const rates = useRef({});
 
+    const [ eur, setEur ] = useState();
+    const [ usd, setUsd ] = useState();
+    const [ pln, setPln ] = useState();
+            
     useEffect(() => {
-        let eur = document.querySelector('.eur');
-        let usd = document.querySelector('.usd');
-        let pln = document.querySelector('.pln');
+        axios.get("https://api.exchangerate.host/latest")
+        .then(({data}) => {
+            data = data.rates;
+            rates.current = data;
 
-        axios.get("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
-            .then(({ data }) => {
-                eur.textContent = data.find(cur => cur.cc == "EUR").rate;
-                usd.textContent = data.find(cur => cur.cc == "USD").rate;
-                pln.textContent = data.find(cur => cur.cc == "PLN").rate;
-            });
+            let usdValue = (data.UAH / data.USD).toFixed(2);
+            let plnValue = (data.UAH / data.PLN).toFixed(2);
 
-    });
-
-
-
-
+            setEur(data.UAH.toFixed(2));
+            setUsd(usdValue);
+            setPln(plnValue);
+        });      
+    }, []);
 
     return (
         <>
@@ -34,9 +36,9 @@ function Header() {
                             <div className='header__middle-text'>
                                 {/* <h3>Актуальный курс валют к гривне на сегодня</h3> */}
                                 <div className="rate">
-                                    <p>EUR<span className="eur"></span></p>
-                                    <p>USD<span className="usd"></span></p>
-                                    <p>PLN<span className="pln"></span></p>
+                                    <p>EUR<span className="eur">{eur}</span></p>
+                                    <p>USD<span className="usd">{usd}</span></p>
+                                    <p>PLN<span className="pln">{pln}</span></p>
                                 </div>
                             </div>
                         </div>
