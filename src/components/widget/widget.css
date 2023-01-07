@@ -112,21 +112,42 @@
     background-color: #2EFCD7;
     border-radius: 5px;
 }
-  
+
 @media screen and (max-width: 900px) {
-    .header__left {
-      display: none;
+    .hero {
+        display: grid;
+        justify-content: center;
+
     }
-  
-    .header__right {
-      display: none;
+    .hero__left h1{
+        font-size: 40px;
     }
-  
-    .header__right h1 {
-      font-size: 40px;
-    }
-  
-    .header__right p {
+
+    .hero__left p{
         font-size: 20px;
+    }
+
+    .widget__wrapper {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .widget__top-sum input {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .widget__bottom-footer button {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .widget__bottom-footer span {
+        text-align: center;
+    }
+
+    .currencies li {
+        font-size: 16px;
     }
 }

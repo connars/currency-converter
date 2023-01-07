@@ -26,3 +26,17 @@
     /* or 37px */
     color: #000000;
 }
+
+@media screen and (max-width: 900px) {
+    .hero__left h1{
+        font-size: 40px;
+    }
+
+    .hero__left p{
+        font-size: 20px;
+    }
+
+    #hero {
+        padding: 0;
+    }
+}
