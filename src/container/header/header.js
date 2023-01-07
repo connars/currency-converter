@@ -32,7 +32,7 @@ function Header() {
                         </div>
                         <div className='header__middle'>
                             <div className='header__middle-text'>
-                                <h3>Актуальный курс валют к гривне на сегодня</h3>
+                                {/* <h3>Актуальный курс валют к гривне на сегодня</h3> */}
                                 <div className="rate">
                                     <p>EUR<span className="eur"></span></p>
                                     <p>USD<span className="usd"></span></p>

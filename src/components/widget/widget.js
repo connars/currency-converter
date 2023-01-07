@@ -1,9 +1,7 @@
-import './widget.css';
 import swith from '../../assets/images/switch.svg';
 import Block from '../block/block';
 import { useState, useEffect, useRef } from "react";
 import axios from 'axios';
-
 
 function Widget() {
 
@@ -12,11 +10,8 @@ function Widget() {
         const [ fromPrice, setFromPrice ] = useState(1);
         const [ toPrice, setToPrice ] = useState(1);
 
-        // const [ rates.current, setRates ] = useState({});
         const rates = useRef({});
 
-     
-        // console.log(rates, fromCurrency);
         useEffect(() => {
             axios.get("https://api.exchangerate.host/latest")
             .then(({data}) => {
@@ -35,23 +30,25 @@ function Widget() {
         }
 
         const onChangeToPrice = (value) => {
-
             const result = (rates.current[fromCurrency] / rates.current[toCurrency]) * value;
-            // setToPrice(result.toFixed(2));
-            // value = result;
             setToPrice(value);
             setFromPrice(result.toFixed(2));
         }
-
 
         useEffect(() => {
             onChangeFromPrice(fromPrice);   
         }, [fromCurrency]);
 
         useEffect(() => {
-            onChangeToPrice(toPrice);   
+            // onChangeFromPrice(fromPrice);
+            onChangeToPrice(toPrice);
+            onChangeFromPrice(fromPrice);  
         }, [toCurrency]);
 
+        function handleSubmit() {
+            setToCurrency(fromCurrency);
+            setFromCurrency(toCurrency);
+        };
 
     return  (
         <div className='widget__wrapper'>
@@ -63,7 +60,7 @@ function Widget() {
                 onChangeValue={onChangeFromPrice}
                 placeholder={''} 
             />
-            <div className="widget__middle">
+            <div className="widget__middle" onClick={handleSubmit}>
                 <hr></hr>
                 <div className="swith">
                     <img className="swith-img" src={swith}></img>

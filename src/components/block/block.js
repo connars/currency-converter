@@ -1,4 +1,3 @@
-import './block.css';
 import { useState, useEffect, useRef } from "react";
 
 
