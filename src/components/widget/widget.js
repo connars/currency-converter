@@ -74,10 +74,11 @@ function Widget() {
                 currency={toCurrency} 
                 onChangeCurrency={setToCurrency}
                 onChangeValue={onChangeToPrice}
+                placeholder={''} 
             />
             <div className="widget__bottom-footer">
-                    <button className="main-btn">Обменять сейчас</button>
-                    <span>Войдите в личный кабинет для возможности провести обмен</span>
+                <button className="main-btn">Обменять сейчас</button>
+                <span>Войдите в личный кабинет для возможности провести обмен</span>
             </div>
         </div>
     )

@@ -7,7 +7,7 @@
     display: grid;
     justify-content: center;
 }
-  
+
 .widget__top, .widget__bottom {
     padding: 20px;
     text-align: center;
